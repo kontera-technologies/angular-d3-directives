@@ -2,7 +2,8 @@
 
 // adopted from here: http://jsfiddle.net/mr23/vJuNU/
 
-angular.module('panopticon').directive('gauge', function () {
+angular.module('d3.directives.gauge', [])
+  .directive('gauge', function () {
   return {
     restrict: 'E',
     scope: {
