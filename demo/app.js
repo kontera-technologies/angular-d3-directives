@@ -1,26 +1,22 @@
 'use strict';
 
 angular.module('demo', ['ui.bootstrap', 'd3.directives.gauge'])
-  .controller('GaugeCtrl', function($scope) {
-    setTimeout(function () {
-      setInterval(function () {
-        $scope.$apply(function () {
-          $scope.gauge0_value = 30 + Math.round(Math.random() * 30);
+  .controller('GaugeCtrl', function($scope, $log) {
+    var valueGenerator = function(model, delay, interval, base, range) {
+      setTimeout(function () {
+        var cancel = setInterval(function () {
+          $scope.$apply(function () {
+            $scope[model] = base + Math.round(Math.random() * range);
+          });
+        }, interval);
+        $scope.$on("$destroy", function () {
+          $log.log("Canceling valueGenerator for [" + model + "]");
+          clearInterval(cancel);
         });
-      }, 1000);
-    }, 0);
-    setTimeout(function () {
-      setInterval(function () {
-        $scope.$apply(function () {
-          $scope.gauge1_value = 40 + Math.round(Math.random() * 30);
-        });
-      }, 1000);
-    }, 300);
-    setTimeout(function () {
-      setInterval(function () {
-        $scope.$apply(function () {
-          $scope.gauge2_value = 50 + Math.round(Math.random() * 30);
-        });
-      }, 1000);
-    }, 600);
+      }, delay);
+    };
+
+    valueGenerator("gauge0_value", 0, 1000, 30, 30);
+    valueGenerator("gauge1_value", 300, 1000, 40, 30);
+    valueGenerator("gauge2_value", 600, 1000, 50, 30);
   });
