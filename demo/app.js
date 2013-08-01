@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demo', ['d3.directives.gauge'])
+angular.module('demo', ['ui.bootstrap', 'd3.directives.gauge'])
   .controller('GaugeCtrl', function($scope) {
     setTimeout(function () {
       setInterval(function () {

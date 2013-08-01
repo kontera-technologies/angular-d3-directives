@@ -1,6 +1,7 @@
 {
   "name": "demo",
   "dependencies": {
-    "angular-d3-directives": "git@github.com:kontera-technologies/angular-d3-directives.git"
+    "angular-d3-directives": "git@github.com:kontera-technologies/angular-d3-directives.git",
+    "angular-bootstrap": ">=0.4.0"
   }
 }
