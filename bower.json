@@ -1,0 +1,15 @@
+{
+  "name": "angular-d3-directives",
+  "version": "0.0.1",
+  "main": [
+    "gauge/gauge.js"
+  ],
+  "ignore": [
+    "README.md"
+  ],
+  "dependencies": {
+    "angular": ">=1"
+  },
+  "devDependencies": {
+  }
+}
