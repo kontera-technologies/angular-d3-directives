@@ -5,7 +5,8 @@
     "gauge/gauge.js"
   ],
   "ignore": [
-    "README.md"
+    "README.md",
+    "demo"
   ],
   "dependencies": {
     "angular": ">=1",

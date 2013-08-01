@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="demo">
+  <head>
+    <meta charset="utf8">
+    <title>Angular D3 Directives Demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid gauge-demo" ng-controller="GaugeCtrl">
+        <div class="span4">
+          <gauge val="{{gauge0_value}}"
+                 label="Test0"
+                 size="200"></gauge>
+          <div>{{gauge0_value}}</div>
+        </div>
+        <div class="span4">
+          <gauge val="{{gauge1_value}}"
+                 label="Test1"
+                 size="200"></gauge>
+          <div>{{gauge1_value}}</div>
+        </div>
+        <div class="span4">
+          <gauge val="{{gauge2_value}}"
+                 label="Test2"
+                 size="200"></gauge>
+          <div>{{gauge2_value}}</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-d3-directives/gauge/gauge.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
